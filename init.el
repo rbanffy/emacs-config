@@ -20,6 +20,23 @@
 ;; Clean up file on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Show matching parentheses
+(show-paren-mode 1)
+
+;; Restore previous desktop on startup
+(desktop-save-mode 1)
+
+;; Tabs are 4 columns and use spaces
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
+
+;; Show line numbers on the left
+(global-linum-mode)
+
+;; Enable autocomplete (requires package 'auto-complete', which is not listed by package-list)
+(require 'auto-complete-config)
+(ac-config-default)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
