@@ -1,3 +1,8 @@
 auto-save-list
 elpa
 *~
+recentf
+ido.last
+.emacs.desktop
+.emacs.desktop.lock
+ac-comphist.dat
