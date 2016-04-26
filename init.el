@@ -1,6 +1,24 @@
 ; -*- coding:utf-8 -*-
 
 
+;; Packages to be instaled
+
+  ;; auto-complete
+  ;; fill-column-indicator
+  ;; flycheck
+  ;; flycheck-typescript
+  ;; flymake-easy
+  ;; flymake-jshint
+  ;; markdown-mode
+  ;; markdown-mode+
+  ;; pkg-info
+  ;; popup
+  ;; popup-complete
+  ;; yaml-mode
+  ;; yasnippet
+  ;; zenburn-theme
+
+
 ;; Add MELPA
 (require 'package)
 (add-to-list 'package-archives
