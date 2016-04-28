@@ -19,6 +19,9 @@
 ;; yasnippet
 ;; zenburn-theme
 
+;; Note: This file assumes the IBM 3270 fonts
+;; (https://github.com/rbanffy/3270font) are installed (it won't fail,
+;; it just won't make your Emacs look better)
 
 ;; Add MELPA
 (require 'package)
