@@ -60,6 +60,13 @@
 (require 'yasnippet)
 (yas/global-mode 1)
 
+;; Because your computer must sound nice, even when your keyboard is not
+(require 'selectric-mode)
+
+;; Keyboard mappings
+(global-set-key [M-f3] 'grep)
+(global-set-key [s-f3] 'grep-find)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
