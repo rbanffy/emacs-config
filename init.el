@@ -36,6 +36,9 @@
 (require 'fill-column-indicator)
 (fci-mode t)
 
+;; Display column number
+(column-number-mode)
+
 ;; Use a better way to open files
 (ido-mode)
 
