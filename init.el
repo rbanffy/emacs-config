@@ -73,6 +73,11 @@
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
 
+;; Set up custom modes
+(add-hook 'python-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
+(add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
+(add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
