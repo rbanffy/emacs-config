@@ -23,6 +23,20 @@
 ;; (https://github.com/rbanffy/3270font) are installed (it won't fail,
 ;; it just won't make your Emacs look better)
 
+;;; Code:
+
+;; Utility functions
+(defun perfect-font-size (pixels)
+  (cond
+   ;; For X-based systems
+   ((eq 'x window-system) (cond ((<= pixels 1024) 100)
+                                ((<= pixels 1366) 110)
+                                ((> pixels 1366) 130)))
+   ;; For Macs (and NeXT boxes, or course)
+   ((eq 'ns window-system) (cond ((<= pixels 1024) 120)
+                                 ((<= pixels 1280) 130)
+                                 ((> pixels 1280) 140)))))
+
 ;; Add MELPA
 (require 'package)
 (add-to-list 'package-archives
@@ -103,3 +117,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "IBM 3270 Narrow"))))
  '(linum ((t (:inherit default :foreground "#777" :background "#333" :box nil :height 100)))))
+
+(provide 'init)
+;;; init.el ends here
