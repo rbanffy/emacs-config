@@ -11,6 +11,7 @@
 ;; flycheck-typescript
 ;; flymake-easy
 ;; flymake-jshint
+;; less-css-mode
 ;; markdown-mode
 ;; markdown-mode+
 ;; pkg-info
