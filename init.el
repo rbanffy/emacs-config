@@ -1,5 +1,7 @@
-; -*- coding:utf-8 -*-
+;;; init --- Initializes the editor
+;; -*- coding:utf-8 -*-
 
+;;; Commentary:
 
 ;; Packages to be instaled
 
@@ -27,6 +29,7 @@
 
 ;; Utility functions
 (defun perfect-font-size (pixels)
+  "Find out the 'perfect' font size based on screen width (from PIXELS)."
   (cond
    ;; For X-based systems
    ((eq 'x window-system) (cond ((<= pixels 1024) 100)
