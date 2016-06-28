@@ -82,7 +82,7 @@
 
 ;; Enable YASnippet
 (require 'yasnippet)
-(yas/global-mode 1)
+(yas-global-mode 1)
 
 ;; Because your computer must sound nice, even when your keyboard is not
 (require 'selectric-mode)
@@ -91,23 +91,30 @@
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
 
+;; Find out the right fill-column based on the hostname
+(defvar local-python-fill-column)
+(if (string= system-name "rbmbp.local")
+    (setq local-python-fill-column 100)
+    (setq local-python-fill-column 79))
+
 ;; Set up custom modes
-(add-hook 'python-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
+(add-hook 'python-mode-hook '(lambda () (progn (set-fill-column local-python-fill-column) (fci-mode) (flycheck-mode))))
 (add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
 (add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
+(add-hook 'emacs-lisp-mode-hook '(lambda () (flycheck-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (wheatgrass)))
+ '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
     ("c4465c56ee0cac519dd6ab6249c7fd5bb2c7f7f78ba2875d28a50d3c20a59473" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" default)))
  '(custom-theme-load-path
    (quote
-    ("~/.emacs.d/elpa/ample-zen-theme-20150119.1354/" "/Users/ricardobanffy/.emacs.d/elpa/zenburn-theme-20160416.1011/" custom-theme-directory t)) t)
+    ("~/.emacs.d/elpa/ample-zen-theme-20150119.1354/" "~/.emacs.d/elpa/zenburn-theme-20160416.1011/" custom-theme-directory t)))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
