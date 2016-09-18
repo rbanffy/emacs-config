@@ -39,7 +39,7 @@
    ;; For Macs (and NeXT boxes, or course)
    ((eq 'ns window-system) (cond ((<= pixels 1024) 120)
                                  ((<= pixels 1280) 130)
-                                 ((> pixels 1280) 140)))))
+                                 ((> pixels 1280) 135)))))
 
 ;; Add MELPA
 (require 'package)
@@ -117,20 +117,24 @@
     ("~/.emacs.d/elpa/ample-zen-theme-20150119.1354/" "~/.emacs.d/elpa/zenburn-theme-20160416.1011/" custom-theme-directory t)))
  '(exec-path
    (quote
-    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
- '(indent-tabs-mode nil)
- '(package-selected-packages
+    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "~/.pyenv/shims/" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
+ '(indent-tabs-mode nil) '(package-selected-packages
    (quote
-    (zencoding-mode zenburn-theme yasnippet yaml-mode selectric-mode popup-complete markdown-mode+ flymake-jshint flycheck fill-column-indicator auto-complete)))
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+    (zencoding-mode zenburn-theme yasnippet yaml-mode
+ selectric-mode popup-complete markdown-mode+ flymake-jshint
+ flycheck fill-column-indicator auto-complete)))
+ '(scroll-bar-mode nil) '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "IBM 3270 Narrow"))))
- '(linum ((t (:inherit default :foreground "#777" :background "#333" :box nil :height 100)))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box
+ nil :strike-through nil :overline nil :underline nil :slant
+ normal :weight normal :height 180 :width normal :family "IBM
+ 3270 Narrow")))) '(linum ((t (:inherit
+ default :foreground "#777" :background "#333" :box nil :height
+ 100)))))
 
 (provide 'init)
 ;;; init.el ends here
