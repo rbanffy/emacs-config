@@ -1,10 +1,10 @@
-auto-save-list
-elpa
 *~
-recentf
-ido.last
 .emacs.desktop
 .emacs.desktop.lock
 ac-comphist.dat
-url
+auto-save-list
+elpa
 eshell
+ido.last
+recentf
+url
