@@ -84,6 +84,12 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;; Highlight the current line and set sane defaults
+(global-hl-line-mode t)
+(set-face-background 'hl-line "#666")
+(set-face-foreground 'hl-line "#fff")
+
+
 ;; Because your computer must sound nice, even when your keyboard is not
 (require 'selectric-mode)
 
