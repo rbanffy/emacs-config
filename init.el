@@ -96,6 +96,16 @@
 ;; Keyboard mappings
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
+(global-set-key (kbd "C-$") '(lambda () (interactive) (eshell t)))
+(global-set-key (kbd "C-c SPC") 'whitespace-mode)
+
+;; Make keyboard defaults sensible on Mac
+(if (eq 'darwin system-type)
+    (progn
+      (global-set-key (kbd "C-<home>") 'beginning-of-buffer)
+      (global-set-key (kbd "C-<end>") 'end-of-buffer)
+      (global-set-key (kbd "<home>") 'move-beginning-of-line)
+      (global-set-key (kbd "<end>") 'move-end-of-line)))
 
 ;; Find out the right fill-column based on the hostname
 (defvar local-python-fill-column)
