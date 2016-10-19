@@ -14,6 +14,7 @@
 ;; less-css-mode
 ;; markdown-mode
 ;; markdown-mode+
+;; minimap
 ;; pkg-info
 ;; popup
 ;; popup-complete
