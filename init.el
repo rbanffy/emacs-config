@@ -54,6 +54,7 @@
 ;; Highlight the fill column
 (require 'fill-column-indicator)
 (fci-mode t)
+(setq fci-rule-color "#999")
 
 ;; Display column number
 (column-number-mode)
@@ -118,6 +119,9 @@
 (add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
 (add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
 (add-hook 'emacs-lisp-mode-hook '(lambda () (flycheck-mode)))
+
+;; Set up the fringe indicators
+(setq indicate-buffer-boundaries t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
