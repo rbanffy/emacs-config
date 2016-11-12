@@ -39,7 +39,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 200 :width normal :family "IBM 3270 Narrow"))))
+ '(default ((t (:inherit nil :family "IBM 3270 Narrow"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :slant italic))))
  '(linum ((t (:inherit default :foreground "#777" :background "#333" :box nil :height 100))))
  '(minimap-active-region-background ((t (:background "gray37")))))
