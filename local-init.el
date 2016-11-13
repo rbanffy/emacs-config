@@ -15,6 +15,7 @@
 ;; markdown-mode
 ;; markdown-mode+
 ;; minimap
+;; oceanic-theme
 ;; pkg-info
 ;; popup
 ;; popup-complete
@@ -52,9 +53,8 @@
 (setq inhibit-startup-message t)
 
 ;; Highlight the fill column
-(require 'fill-column-indicator)
+;; (require 'fill-column-indicator)
 (fci-mode t)
-(setq fci-rule-color "#999")
 
 ;; Display column number
 (column-number-mode)
@@ -122,6 +122,9 @@
 
 ;; Set up the fringe indicators
 (setq indicate-buffer-boundaries t)
+
+;; Setup the default theme
+(require 'oceanic-theme)
 
 (provide 'local-init)
 ;;; local-init.el ends here
