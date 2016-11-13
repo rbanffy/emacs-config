@@ -5,24 +5,35 @@
 
 ;; Packages to be instaled
 
-;; auto-complete
-;; fill-column-indicator
-;; flycheck
-;; flycheck-typescript
-;; flymake-easy
-;; flymake-jshint
-;; less-css-mode
-;; markdown-mode
-;; markdown-mode+
-;; minimap
-;; oceanic-theme
-;; pkg-info
-;; popup
-;; popup-complete
-;; selectric-mode
-;; yaml-mode
-;; yasnippet
-;; zenburn-theme
+(defconst required-packages
+  '(
+    auto-complete
+    fill-column-indicator
+    flycheck
+    flymake-easy
+    flymake-jshint
+    less-css-mode
+    markdown-mode
+    markdown-mode+
+    minimap
+    obsidian-theme
+    oceanic-theme
+    pkg-info
+    popup
+    popup-complete
+    selectric-mode
+    yaml-mode
+    yasnippet
+    zenburn-theme
+    )
+  "The packages we need installed for this to work.")
+
+;; Install anything that's missing.
+(mapc
+ (lambda (p)
+   (unless (package-installed-p p)
+     (package-install p)))
+ required-packages)
 
 ;; Note: This file assumes the IBM 3270 fonts
 ;; (https://github.com/rbanffy/3270font) are installed (it won't fail,
