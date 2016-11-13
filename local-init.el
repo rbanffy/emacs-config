@@ -28,6 +28,12 @@
     )
   "The packages we need installed for this to work.")
 
+;; Add MELPA. Will be needed for the next step.
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
 ;; Install anything that's missing.
 (mapc
  (lambda (p)
@@ -53,12 +59,6 @@
    ((eq 'ns window-system) (cond ((<= pixels 1024) 120)
                                  ((<= pixels 1280) 130)
                                  ((> pixels 1280) 135)))))
-
-;; Add MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
 
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
