@@ -28,6 +28,8 @@
     )
   "The packages we need installed for this to work.")
 
+;;; Code:
+
 ;; Add MELPA. Will be needed for the next step.
 (require 'package)
 (add-to-list 'package-archives
@@ -44,8 +46,6 @@
 ;; Note: This file assumes the IBM 3270 fonts
 ;; (https://github.com/rbanffy/3270font) are installed (it won't fail,
 ;; it just won't make your Emacs look better)
-
-;;; Code:
 
 ;; Utility functions
 (defun perfect-font-size (pixels)
