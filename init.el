@@ -42,7 +42,8 @@
  '(default ((t (:inherit nil :family "IBM 3270 Narrow"))))
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :slant italic))))
  '(linum ((t (:inherit default :foreground "#777" :background "#333" :box nil :height 100))))
- '(minimap-active-region-background ((t (:background "gray37")))))
+ '(minimap-active-region-background ((t (:background "gray37"))))
+ '(region ((t (:box (:line-width -1 :color "grey75"))))))
 
 (provide 'init)
 ;;; init.el ends here
