@@ -43,7 +43,7 @@
  '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :slant italic))))
  '(linum ((t (:inherit default :foreground "#777" :background "#333" :box nil :height 100))))
  '(minimap-active-region-background ((t (:background "gray37"))))
- '(region ((t (:box (:line-width -1 :color "grey75"))))))
+ '(mode-line-buffer-id ((t (:underline t)))))
 
 (provide 'init)
 ;;; init.el ends here
