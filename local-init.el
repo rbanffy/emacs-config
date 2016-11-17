@@ -48,17 +48,24 @@
 ;; it just won't make your Emacs look better)
 
 ;; Utility functions
-(defun perfect-font-size (pixels)
-  "Find out the 'perfect' font size based on screen width (from PIXELS)."
-  (cond
-   ;; For X-based systems
-   ((eq 'x window-system) (cond ((<= pixels 1024) 100)
-                                ((<= pixels 1366) 110)
-                                ((> pixels 1366) 130)))
-   ;; For Macs (and NeXT boxes, or course)
-   ((eq 'ns window-system) (cond ((<= pixels 1024) 120)
-                                 ((<= pixels 1280) 130)
-                                 ((> pixels 1280) 135)))))
+(defun perfect-font-size ()
+    "Find out the 'perfect' font size based on screen width and host name."
+  (let (pixels (display-pixel-width))
+    (cond
+     ;; Some hosts we know
+     ((string= system-name "rbmbp.local") 170)
+     ;; For X-based systems
+     ((eq 'x window-system) (cond ((<= pixels 1024) 100)
+                                  ((<= pixels 1366) 110)
+                                  ((> pixels 1366) 130)))
+     ;; For Macs (and NeXT boxes, or course)
+     ((eq 'ns window-system) (cond ((<= pixels 1024) 120)
+                                   ((<= pixels 1280) 130)
+                                   ((> pixels 1280) 135)))))
+  )
+
+;; Set font size
+(set-face-attribute 'default nil :height (perfect-font-size))
 
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
