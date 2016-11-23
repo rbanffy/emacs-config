@@ -142,6 +142,9 @@
 ;; Set up the fringe indicators
 (setq indicate-buffer-boundaries t)
 
+;; Get us a more appropriate grep
+(setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
+
 ;; Setup the default theme
 (require 'oceanic-theme)
 
