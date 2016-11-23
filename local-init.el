@@ -53,6 +53,7 @@
     (cond
      ;; Some hosts we know
      ((string= system-name "rbmbp.local") (if (= (display-pixel-width) 1920) 170 200))
+     ((string= system-name "lem") 120)
      ;; For X-based systems
      ((eq 'x window-system) (cond ((<= (display-pixel-width) 1024) 100)
                                   ((<= (display-pixel-width) 1366) 110)
