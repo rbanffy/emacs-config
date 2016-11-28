@@ -9,6 +9,13 @@
 
 ;; Emacs likes to update this file when options change, so we'll keep
 ;; the portions we actually care about elsewhere.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (load-file (concat (file-name-directory user-init-file) "local-init.el"))
 
 ;; From here to the end of the file, Emacs will make its own updates.
@@ -24,7 +31,7 @@
     ("c4465c56ee0cac519dd6ab6249c7fd5bb2c7f7f78ba2875d28a50d3c20a59473" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" default)))
  '(custom-theme-load-path
    (quote
-    ("~/.emacs.d/elpa/ample-zen-theme-20150119.1354/" "~/.emacs.d/elpa/zenburn-theme-20160416.1011/" custom-theme-directory t)))
+    ("~/.emacs.d/elpa/ample-zen-theme-20150119.1354/" "~/.emacs.d/elpa/zenburn-theme-20160416.1011/" custom-theme-directory t)) t)
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "~/.pyenv/shims/" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))

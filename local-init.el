@@ -53,8 +53,9 @@
     "Find out the 'perfect' font size based on screen width and host name."
     (cond
      ;; Some hosts we know
-     ((string= system-name "rbmbp.local") (if (= (display-pixel-width) 1920) 170 200))
-     ((string= system-name "lem") 120)
+     ((string= (system-name) "rbmbp.local")
+      (if (= (display-pixel-width) 1920) 170 200))
+     ((string= (system-name) "lem") 120)
      ;; For X-based systems
      ((eq 'x window-system) (cond ((<= (display-pixel-width) 1024) 100)
                                   ((<= (display-pixel-width) 1366) 110)
@@ -118,8 +119,10 @@
 (global-set-key [s-f3] 'grep-find)
 (global-set-key (kbd "C-$") '(lambda () (interactive) (eshell t)))
 (global-set-key (kbd "C-c SPC") 'whitespace-mode)
-(global-set-key [s-f12] '(lambda () (interactive)
-                           (set-face-attribute 'default nil :height (perfect-font-size))))
+(global-set-key [s-f12]
+                '(lambda () (interactive)
+                   (set-face-attribute 'default nil
+                                       :height (perfect-font-size))))
 
 ;; Make keyboard defaults sensible on Mac
 (if (eq 'darwin system-type)
