@@ -12,6 +12,7 @@
     flycheck
     flymake-easy
     flymake-jshint
+    graphviz-dot-mode
     less-css-mode
     markdown-mode
     markdown-mode+
