@@ -22,6 +22,7 @@
     pkg-info
     popup
     popup-complete
+    rainbow-mode
     selectric-mode
     yaml-mode
     yasnippet
@@ -117,12 +118,17 @@
 ;; Keyboard mappings
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
-(global-set-key (kbd "C-$") '(lambda () (interactive) (eshell t)))
+(global-set-key [C-$] '(lambda () (interactive) (eshell t)))
 (global-set-key (kbd "C-c SPC") 'whitespace-mode)
+
+;; Adjust the screen text size to the perfect size
 (global-set-key [s-f12]
                 '(lambda () (interactive)
                    (set-face-attribute 'default nil
                                        :height (perfect-font-size))))
+
+;; Toggle hiding blocks
+(global-set-key [C-tab] 'hs-toggle-hiding)
 
 ;; Make keyboard defaults sensible on Mac
 (if (eq 'darwin system-type)
@@ -146,12 +152,16 @@
 
 ;; Set up the fringe indicators
 (setq indicate-buffer-boundaries t)
+(fringe-mode nil)
 
 ;; Get us a more appropriate grep
 (setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
 
 ;; Setup the default theme
 (require 'oceanic-theme)
+
+(require 'rainbow-mode)
+(rainbow-mode t)
 
 (provide 'local-init)
 ;;; local-init.el ends here
