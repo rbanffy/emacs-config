@@ -157,7 +157,7 @@
                )))
 (add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
 (add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
-(add-hook 'emacs-lisp-mode-hook '(lambda () (flycheck-mode)))
+(add-hook 'emacs-lisp-mode-hook '(lambda () (progn (hs-minor-mode t) (flycheck-mode))))
 
 ;; Set up the fringe indicators
 (setq indicate-buffer-boundaries t)
