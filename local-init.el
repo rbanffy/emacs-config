@@ -145,7 +145,16 @@
     (setq local-python-fill-column 79))
 
 ;; Set up custom modes
-(add-hook 'python-mode-hook '(lambda () (progn (set-fill-column local-python-fill-column) (fci-mode) (flycheck-mode))))
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (progn
+               (set-fill-column local-python-fill-column)
+               (fci-mode)
+               (flycheck-mode)
+               (hs-minor-mode t)
+               (local-set-key (kbd "s->") 'python-indent-shift-right)
+               (local-set-key (kbd "s-<") 'python-indent-shift-left)
+               )))
 (add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
 (add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
 (add-hook 'emacs-lisp-mode-hook '(lambda () (flycheck-mode)))
