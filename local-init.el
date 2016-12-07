@@ -8,6 +8,7 @@
 (defconst required-packages
   '(
     auto-complete
+    dired-k
     fill-column-indicator
     flycheck
     flymake-easy
@@ -17,6 +18,7 @@
     markdown-mode
     markdown-mode+
     minimap
+    multiple-cursors
     obsidian-theme
     oceanic-theme
     pkg-info
@@ -160,17 +162,24 @@
 (add-hook 'emacs-lisp-mode-hook '(lambda () (progn (hs-minor-mode t) (flycheck-mode))))
 
 ;; Set up the fringe indicators
-(setq indicate-buffer-boundaries t)
 (fringe-mode nil)
+(setq indicate-buffer-boundaries t)
 
 ;; Get us a more appropriate grep
 (setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
 
-;; Setup the default theme
+;; Set up the default theme
 (require 'oceanic-theme)
 
+;; Display color specs in color
 (require 'rainbow-mode)
 (rainbow-mode t)
+
+;; This is really awesome
+(require 'multiple-cursors)
+
+;; Colorful dired w/ git info.
+(require 'dired-k)
 
 (provide 'local-init)
 ;;; local-init.el ends here
