@@ -8,7 +8,7 @@
 (defconst required-packages
   '(
     auto-complete
-    dired-k
+    dired-k  ; this one may require manual installation
     fill-column-indicator
     flycheck
     flymake-easy
