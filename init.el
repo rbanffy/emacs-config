@@ -16,6 +16,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; Load our local customizations.
 (load-file (concat (file-name-directory user-init-file) "local-init.el"))
 
 ;; From here to the end of the file, Emacs will make its own updates.
