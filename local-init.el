@@ -8,12 +8,12 @@
 (defconst required-packages
   '(
     auto-complete
-    dired-k
     fill-column-indicator
     flycheck
     flymake-easy
     flymake-jshint
     graphviz-dot-mode
+    green-screen-theme
     less-css-mode
     markdown-mode
     markdown-mode+
@@ -76,7 +76,6 @@
 (setq inhibit-startup-message t)
 
 ;; Highlight the fill column
-;; (require 'fill-column-indicator)
 (fci-mode t)
 
 ;; Display column number
@@ -111,8 +110,6 @@
 
 ;; Highlight the current line and set sane defaults
 (global-hl-line-mode t)
-(set-face-background 'hl-line "#777")
-(set-face-foreground 'hl-line "#fff")
 
 ;; Because your computer must sound nice, even when your keyboard is not
 (require 'selectric-mode)
@@ -177,9 +174,6 @@
 
 ;; This is really awesome
 (require 'multiple-cursors)
-
-;; Colorful dired w/ git info.
-(require 'dired-k)
 
 (provide 'local-init)
 ;;; local-init.el ends here
