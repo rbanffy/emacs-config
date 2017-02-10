@@ -139,7 +139,7 @@
 
 ;; Find out the right fill-column based on the hostname
 (defvar local-python-fill-column)
-(if (string= system-name "rbmbp.local")
+(if (string= (system-name) "rbmbp.local")
     (setq local-python-fill-column 100)
     (setq local-python-fill-column 79))
 
