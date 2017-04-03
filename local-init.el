@@ -8,6 +8,9 @@
 (defconst required-packages
   '(
     auto-complete
+    electric-spacing
+    elfeed
+    elfeed-goodies
     fill-column-indicator
     flycheck
     flymake-easy

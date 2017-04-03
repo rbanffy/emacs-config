@@ -27,13 +27,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes nil)
+ '(elfeed-feeds
+   (quote
+    ("http://cacm.acm.org/news.rss" "https://www.nextplatform.com/feed/" "http://gizmodo.com/index.xml" "http://rss.cnn.com/rss/edition.rss")))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "~/.pyenv/shims/" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
  '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
-    (zencoding-mode zenburn-theme yasnippet yaml-mode selectric-mode popup-complete markdown-mode+ flymake-jshint flycheck fill-column-indicator auto-complete)))
+    (electric-spacing elfeed elfeed-goodies zencoding-mode zenburn-theme yasnippet yaml-mode selectric-mode popup-complete markdown-mode+ flymake-jshint flycheck fill-column-indicator auto-complete)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
