@@ -29,7 +29,7 @@
  '(custom-enabled-themes nil)
  '(elfeed-feeds
    (quote
-    ("http://cacm.acm.org/news.rss" "https://www.nextplatform.com/feed/" "http://gizmodo.com/index.xml" "http://rss.cnn.com/rss/edition.rss")))
+    ("http://www.tomshardware.com/feeds/rss2/all.xml" "http://hothardware.com/rss/news.aspx" "http://cacm.acm.org/news.rss" "https://www.nextplatform.com/feed/" "http://gizmodo.com/index.xml" "http://rss.cnn.com/rss/edition.rss")))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "~/.pyenv/shims/" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
