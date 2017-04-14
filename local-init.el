@@ -60,20 +60,8 @@
 
 ;; Utility functions
 (defun perfect-font-size ()
-    "Find out the 'perfect' font size based on screen width and host name."
-    (cond
-     ;; Some hosts we know
-     ((string= (system-name) "rbmbp.local")
-      (if (= (display-pixel-width) 1920) 170 200))
-     ((string= (system-name) "lem") 120)
-     ;; For X-based systems
-     ((eq 'x window-system) (cond ((<= (display-pixel-width) 1024) 100)
-                                  ((<= (display-pixel-width) 1366) 110)
-                                  ((> (display-pixel-width) 1366) 130)))
-     ;; For Macs (and NeXT boxes, or course)
-     ((eq 'ns window-system) (cond ((<= (display-pixel-width) 1024) 120)
-                                   ((<= (display-pixel-width) 1280) 130)
-                                   ((> (display-pixel-width) 1280) 135))))
+  "Find out the 'perfect' font size based on screen width."
+  (/ (* (window-width) (face-attribute 'default :height)) 100)
   )
 
 ;; Set "perfect" font size
