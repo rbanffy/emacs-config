@@ -7,7 +7,9 @@
 
 (defconst required-packages
   '(
+    ac-html
     auto-complete
+    dockerfile-mode
     electric-spacing
     elfeed
     elfeed-goodies
@@ -29,6 +31,8 @@
     popup-complete
     rainbow-mode
     selectric-mode
+    web-completion-data
+    web-mode
     yaml-mode
     yasnippet
     zenburn-theme

@@ -36,7 +36,7 @@
  '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
-    (electric-spacing elfeed elfeed-goodies zencoding-mode zenburn-theme yasnippet yaml-mode selectric-mode popup-complete markdown-mode+ flymake-jshint flycheck fill-column-indicator auto-complete)))
+    (dockerfile-mode web-mode web-completion-data ac-html electric-spacing elfeed elfeed-goodies zencoding-mode zenburn-theme yasnippet yaml-mode selectric-mode popup-complete markdown-mode+ flymake-jshint flycheck fill-column-indicator auto-complete)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
