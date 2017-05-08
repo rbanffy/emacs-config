@@ -20,6 +20,7 @@
     graphviz-dot-mode
     green-screen-theme
     less-css-mode
+    lua-mode
     markdown-mode
     markdown-mode+
     minimap
@@ -54,6 +55,39 @@
      (package-install p)))
  required-packages)
 
+(set-variable 'flycheck-python-flake8-executable "/opt/local/bin/flake8")
+(set-variable
+ 'package-selected-packages '(
+                              ac-html
+                              auto-complete
+                              dockerfile-mode
+                              electric-spacing elfeed
+                              elfeed-goodies
+                              fill-column-indicator
+                              flycheck
+                              flymake-jshint
+                              lua-mode
+                              markdown-mode+
+                              popup-complete
+                              selectric-mode
+                              web-completion-data
+                              web-mode
+                              yaml-mode
+                              yasnippet
+                              zencoding-mode
+                              )
+ )
+(set-variable
+ 'elfeed-feeds '(
+                 "http://www.tomshardware.com/feeds/rss2/all.xml"
+                 "http://hothardware.com/rss/news.aspx"
+                 "http://cacm.acm.org/news.rss"
+                 "https://www.nextplatform.com/feed/"
+                 "http://gizmodo.com/index.xml"
+                 "http://rss.cnn.com/rss/edition.rss"
+                 )
+ )
+
 ;; Note: This file assumes the IBM 3270 fonts
 ;; (https://github.com/rbanffy/3270font) are installed (it won't fail,
 ;; it just won't make your Emacs look better)
@@ -63,9 +97,6 @@
   "Find out the 'perfect' font size based on screen width."
   (/ (* (window-width) (face-attribute 'default :height)) 100)
   )
-
-;; Set "perfect" font size
-(set-face-attribute 'default nil :height (perfect-font-size))
 
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
@@ -169,6 +200,11 @@
 
 ;; This is really awesome
 (require 'multiple-cursors)
+
+;; Set "perfect" font size
+(let ((size (perfect-font-size)))
+     (message (format "Setting font size to %s" size))
+     (set-face-attribute 'default nil :height size))
 
 (provide 'local-init)
 ;;; local-init.el ends here
