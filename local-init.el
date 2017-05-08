@@ -47,6 +47,7 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+(package-refresh-contents) ;; Update the package list so nothing we need is missing.
 
 ;; Install anything that's missing.
 (mapc
