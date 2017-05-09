@@ -66,7 +66,11 @@
   )
 
 ;; Set "perfect" font size
-(set-face-attribute 'default nil :height (perfect-font-size))
+(defun set-perfect-font-size ()
+  "Set the font to a size perfect to this screen or window."
+  (interactive)
+  (set-face-attribute 'default nil :height (perfect-font-size)))
+(set-perfect-font-size)
 
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
@@ -117,10 +121,7 @@
 (global-set-key (kbd "C-c SPC") 'whitespace-mode)
 
 ;; Adjust the screen text size to the perfect size
-(global-set-key [s-f12]
-                '(lambda () (interactive)
-                   (set-face-attribute 'default nil
-                                       :height (perfect-font-size))))
+(global-set-key [C-f12] 'set-perfect-font-size)
 
 ;; Toggle hiding blocks
 (global-set-key [C-tab] 'hs-toggle-hiding)
