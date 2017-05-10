@@ -104,7 +104,7 @@
   "Set the font to a size perfect to this screen or window."
   (interactive)
   (set-face-attribute 'default nil :height (perfect-font-size)))
-(set-perfect-font-size)
+(set-perfect-font-size) ; We'll bind this to a key later.
 
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
@@ -151,7 +151,6 @@
 ;; Keyboard mappings
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
-(global-set-key [C-$] '(lambda () (interactive) (eshell t)))
 (global-set-key (kbd "C-c SPC") 'whitespace-mode)
 
 ;; Adjust the screen text size to the perfect size
