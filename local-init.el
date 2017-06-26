@@ -106,6 +106,12 @@
   (set-face-attribute 'default nil :height (perfect-font-size)))
 (set-perfect-font-size) ; We'll bind this to a key later.
 
+;; Insert file name at point
+(defun insert-file-name ()
+  "Insert the name of the buffer at point."
+  (interactive)
+  (insert (buffer-name)))
+
 ;; Avoid the startup screen
 (setq inhibit-startup-message t)
 
