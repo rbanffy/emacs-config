@@ -178,7 +178,7 @@
 (defvar local-python-fill-column)
 (if (string= (system-name) "rbmbp.local")
     (setq local-python-fill-column 100)
-    (setq local-python-fill-column 79))
+  (setq local-python-fill-column 79))
 
 ;; Set up custom modes
 (add-hook 'python-mode-hook
@@ -191,9 +191,23 @@
                (local-set-key (kbd "s->") 'python-indent-shift-right)
                (local-set-key (kbd "s-<") 'python-indent-shift-left)
                )))
-(add-hook 'markdown-mode-hook '(lambda () (progn (set-fill-column 72) (fci-mode))))
-(add-hook 'javascript-mode-hook '(lambda () (progn (set-fill-column 79) (fci-mode) (flycheck-mode))))
-(add-hook 'emacs-lisp-mode-hook '(lambda () (progn (hs-minor-mode t) (flycheck-mode))))
+(add-hook 'markdown-mode-hook
+          '(lambda ()
+             (progn
+               (set-fill-column 72)
+               (fci-mode))))
+(add-hook 'javascript-mode-hook
+          '(lambda ()
+             (progn
+               (set-fill-column 79)
+               (fci-mode)
+               (setq-local js-indent-level 2)
+               (flycheck-mode))))
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+             (progn
+               (hs-minor-mode t)
+               (flycheck-mode))))
 
 ;; Set up the fringe indicators
 (fringe-mode nil)
