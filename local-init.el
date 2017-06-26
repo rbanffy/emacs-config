@@ -32,6 +32,7 @@
     popup-complete
     rainbow-mode
     selectric-mode
+    terraform-mode
     web-completion-data
     web-mode
     yaml-mode
