@@ -8,7 +8,12 @@
 (defconst required-packages
   '(
     ac-html
+    ansible
+    ansible-doc
     auto-complete
+    django-mode
+    django-snippets
+    docker-compose-mode
     dockerfile-mode
     electric-spacing
     elfeed
@@ -17,8 +22,11 @@
     flycheck
     flymake-easy
     flymake-jshint
+    git-gutter
+    go-mode
     graphviz-dot-mode
     green-screen-theme
+    kubernetes
     less-css-mode
     lua-mode
     markdown-mode
@@ -218,7 +226,8 @@
 (setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
 
 ;; Set up the default theme
-(require 'oceanic-theme)
+;; (require 'oceanic-theme)  ; Nice, dark, relaxing
+(require 'green-screen-theme)  ; Very vintage, best experienced on a CRT
 
 ;; Display color specs in color
 (require 'rainbow-mode)
