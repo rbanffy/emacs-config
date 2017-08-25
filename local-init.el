@@ -22,7 +22,7 @@
     flycheck
     flymake-easy
     flymake-jshint
-    git-gutter
+    git-gutter-fringe
     go-mode
     graphviz-dot-mode
     green-screen-theme
@@ -69,17 +69,32 @@
 (set-variable
  'package-selected-packages '(
                               ac-html
+                              ansible
+                              ansible-doc
                               auto-complete
+                              django-mode
+                              django-snippets
+                              docker-compose-mode
                               dockerfile-mode
+                              dot-mode
+                              electric-spacing
                               electric-spacing elfeed
+                              elfeed
                               elfeed-goodies
                               fill-column-indicator
                               flycheck
+                              flymake-go
                               flymake-jshint
+                              git-gutter
+                              go-mode
+                              kubernetes
                               lua-mode
                               markdown-mode+
                               popup-complete
+                              rust-mode
                               selectric-mode
+                              string-inflection
+                              terraform-mode
                               web-completion-data
                               web-mode
                               yaml-mode
@@ -87,6 +102,7 @@
                               zencoding-mode
                               )
  )
+
 (set-variable
  'elfeed-feeds '(
                  "http://www.tomshardware.com/feeds/rss2/all.xml"
