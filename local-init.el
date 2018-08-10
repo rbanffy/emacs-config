@@ -15,13 +15,16 @@
     django-snippets
     docker-compose-mode
     dockerfile-mode
+    dot-mode
     electric-spacing
     elfeed
     elfeed-goodies
     fill-column-indicator
     flycheck
     flymake-easy
+    flymake-go
     flymake-jshint
+    git-gutter
     git-gutter-fringe
     go-mode
     graphviz-dot-mode
@@ -39,13 +42,16 @@
     popup
     popup-complete
     rainbow-mode
+    rust-mode
     selectric-mode
+    string-inflection
     terraform-mode
     web-completion-data
     web-mode
     yaml-mode
     yasnippet
     zenburn-theme
+    zencoding-mode
     )
   "The packages we need installed for this to work.")
 
@@ -66,42 +72,6 @@
  required-packages)
 
 (set-variable 'flycheck-python-flake8-executable "/opt/local/bin/flake8")
-(set-variable
- 'package-selected-packages '(
-                              ac-html
-                              ansible
-                              ansible-doc
-                              auto-complete
-                              django-mode
-                              django-snippets
-                              docker-compose-mode
-                              dockerfile-mode
-                              dot-mode
-                              electric-spacing
-                              electric-spacing elfeed
-                              elfeed
-                              elfeed-goodies
-                              fill-column-indicator
-                              flycheck
-                              flymake-go
-                              flymake-jshint
-                              git-gutter
-                              go-mode
-                              kubernetes
-                              lua-mode
-                              markdown-mode+
-                              popup-complete
-                              rust-mode
-                              selectric-mode
-                              string-inflection
-                              terraform-mode
-                              web-completion-data
-                              web-mode
-                              yaml-mode
-                              yasnippet
-                              zencoding-mode
-                              )
- )
 
 (set-variable
  'elfeed-feeds '(
