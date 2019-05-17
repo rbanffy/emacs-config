@@ -8,18 +8,28 @@
 (defconst required-packages
   '(
     ac-html
+    ansible
+    ansible-doc
     auto-complete
+    django-mode
+    django-snippets
+    docker-compose-mode
     dockerfile-mode
-    dockerfile-mode
+    dot-mode
     electric-spacing
     elfeed
     elfeed-goodies
     fill-column-indicator
     flycheck
     flymake-easy
+    flymake-go
     flymake-jshint
+    git-gutter
+    git-gutter-fringe
+    go-mode
     graphviz-dot-mode
     green-screen-theme
+    kubernetes
     less-css-mode
     lua-mode
     markdown-mode
@@ -32,13 +42,16 @@
     popup
     popup-complete
     rainbow-mode
+    rust-mode
     selectric-mode
+    string-inflection
     terraform-mode
     web-completion-data
     web-mode
     yaml-mode
     yasnippet
     zenburn-theme
+    zencoding-mode
     )
   "The packages we need installed for this to work.")
 
@@ -59,27 +72,7 @@
  required-packages)
 
 (set-variable 'flycheck-python-flake8-executable "/opt/local/bin/flake8")
-(set-variable
- 'package-selected-packages '(
-                              ac-html
-                              auto-complete
-                              dockerfile-mode
-                              electric-spacing elfeed
-                              elfeed-goodies
-                              fill-column-indicator
-                              flycheck
-                              flymake-jshint
-                              lua-mode
-                              markdown-mode+
-                              popup-complete
-                              selectric-mode
-                              web-completion-data
-                              web-mode
-                              yaml-mode
-                              yasnippet
-                              zencoding-mode
-                              )
- )
+
 (set-variable
  'elfeed-feeds '(
                  "http://www.tomshardware.com/feeds/rss2/all.xml"
@@ -136,6 +129,7 @@
 (global-set-key [M-f3] 'grep)
 (global-set-key [s-f3] 'grep-find)
 (global-set-key (kbd "C-c SPC") 'whitespace-mode)
+(global-set-key (kbd "s-k") 'kill-current-buffer)
 
 ;; Adjust the screen text size to the perfect size
 (global-set-key [C-f12] 'set-perfect-font-size)
@@ -145,6 +139,23 @@
 
 
 ;; Set up custom modes
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+             (progn
+               (hs-minor-mode t)
+               (flycheck-mode))))
+(add-hook 'javascript-mode-hook
+          '(lambda ()
+             (progn
+               (set-fill-column 79)
+               (fci-mode)
+               (setq-local js-indent-level 2)
+               (flycheck-mode))))
+(add-hook 'markdown-mode-hook
+          '(lambda ()
+             (progn
+               (set-fill-column 72)
+               (fci-mode))))
 (add-hook 'python-mode-hook
           '(lambda ()
              (progn
@@ -155,26 +166,16 @@
                (local-set-key (kbd "s->") 'python-indent-shift-right)
                (local-set-key (kbd "s-<") 'python-indent-shift-left)
                )))
-(add-hook 'markdown-mode-hook
+(add-hook 'ruby-mode-hook
           '(lambda ()
-             (progn
-               (set-fill-column 72)
-               (fci-mode))))
-(add-hook 'javascript-mode-hook
-          '(lambda ()
-             (progn
-               (set-fill-column 79)
-               (fci-mode)
-               (setq-local js-indent-level 2)
-               (flycheck-mode))))
-(add-hook 'emacs-lisp-mode-hook
-          '(lambda ()
-             (progn
-               (hs-minor-mode t)
-               (flycheck-mode))))
+             (flycheck-mode)))
 
 ;; Get us a more appropriate grep
 (setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
+
+;; Display color specs in color
+(require 'rainbow-mode)
+(rainbow-mode t)
 
 ;; This is really awesome
 (require 'multiple-cursors)

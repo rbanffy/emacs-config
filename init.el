@@ -35,8 +35,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7"
-    "#8cc4ff" "#eeeeec"])
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(column-number-mode t)
  '(custom-enabled-themes (quote (deeper-blue)))
  '(desktop-save-mode t)
@@ -47,16 +46,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (zenburn-theme yasnippet yaml-mode web-mode
-     web-completion-data terraform-mode selectric-mode
-     rainbow-mode popup-complete oceanic-theme obsidian-theme
-     multiple-cursors minimap markdown-mode+ lua-mode
-     less-css-mode green-screen-theme flymake-jshint flymake-easy
-     flycheck fill-column-indicator elfeed-goodies elfeed
-     electric-spacing dockerfile-mode ac-html tabbar session
-     pod-mode markdown-mode initsplit htmlize graphviz-dot-mode
-     eproject dpkg-dev-el diminish devscripts csv-mode
-     browse-kill-ring boxquote bar-cursor apache-mode)))
+    (zenburn-theme yasnippet yaml-mode web-mode web-completion-data terraform-mode selectric-mode rainbow-mode popup-complete oceanic-theme obsidian-theme multiple-cursors minimap markdown-mode+ lua-mode less-css-mode green-screen-theme flymake-jshint flymake-easy flycheck fill-column-indicator elfeed-goodies elfeed electric-spacing dockerfile-mode ac-html tabbar session pod-mode markdown-mode initsplit htmlize graphviz-dot-mode eproject dpkg-dev-el diminish devscripts csv-mode browse-kill-ring boxquote bar-cursor apache-mode)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
@@ -66,9 +56,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Inconsolata" :foundry "PfEd" :slant
- normal :weight normal :height 128 :width normal)))))
-
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 98 :width normal)))))
 
 (provide 'init)
 ;;; init.el ends here
