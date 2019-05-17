@@ -10,6 +10,7 @@
     ac-html
     auto-complete
     dockerfile-mode
+    dockerfile-mode
     electric-spacing
     elfeed
     elfeed-goodies
@@ -107,39 +108,15 @@
   (set-face-attribute 'default nil :height (perfect-font-size)))
 (set-perfect-font-size) ; We'll bind this to a key later.
 
-;; Insert file name at point
-(defun insert-file-name ()
-  "Insert the name of the buffer at point."
-  (interactive)
-  (insert (buffer-name)))
-
-;; Avoid the startup screen
-(setq inhibit-startup-message t)
-
 ;; Highlight the fill column
 (fci-mode t)
-
-;; Display column number
-(column-number-mode)
-
-;; Use a better way to open files
-(ido-mode)
 
 ;; Clean up file on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Show matching parentheses
-(show-paren-mode 1)
-
-;; Restore previous desktop on startup
-(desktop-save-mode 1)
-
 ;; Tabs are 4 columns and use spaces
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
-
-;; Show line numbers on the left
-(global-linum-mode)
 
 ;; Enable autocomplete (requires package 'auto-complete', which is not listed by package-list)
 (require 'auto-complete-config)
@@ -166,20 +143,6 @@
 ;; Toggle hiding blocks
 (global-set-key [C-tab] 'hs-toggle-hiding)
 
-;; Make keyboard defaults sensible on Mac
-(if (eq 'darwin system-type)
-    (progn
-      (global-set-key (kbd "C-<home>") 'beginning-of-buffer)
-      (global-set-key (kbd "C-<end>") 'end-of-buffer)
-      (global-set-key (kbd "<home>") 'move-beginning-of-line)
-      (global-set-key (kbd "<end>") 'move-end-of-line)))
-
-
-;; Find out the right fill-column based on the hostname
-(defvar local-python-fill-column)
-(if (string= (system-name) "rbmbp.local")
-    (setq local-python-fill-column 100)
-  (setq local-python-fill-column 79))
 
 ;; Set up custom modes
 (add-hook 'python-mode-hook
@@ -210,19 +173,8 @@
                (hs-minor-mode t)
                (flycheck-mode))))
 
-;; Set up the fringe indicators
-(fringe-mode nil)
-(setq indicate-buffer-boundaries t)
-
 ;; Get us a more appropriate grep
 (setq grep-find-command "find .. -type f -exec fgrep -rnH -e  {} +")
-
-;; Set up the default theme
-(require 'oceanic-theme)
-
-;; Display color specs in color
-(require 'rainbow-mode)
-(rainbow-mode t)
 
 ;; This is really awesome
 (require 'multiple-cursors)
