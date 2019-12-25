@@ -44,6 +44,7 @@
  '(global-linum-mode t)
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
     (zenburn-theme yasnippet yaml-mode web-mode web-completion-data terraform-mode selectric-mode rainbow-mode popup-complete oceanic-theme obsidian-theme multiple-cursors minimap markdown-mode+ lua-mode less-css-mode green-screen-theme flymake-jshint flymake-easy flycheck fill-column-indicator elfeed-goodies elfeed electric-spacing dockerfile-mode ac-html tabbar session pod-mode markdown-mode initsplit htmlize graphviz-dot-mode eproject dpkg-dev-el diminish devscripts csv-mode browse-kill-ring boxquote bar-cursor apache-mode)))
